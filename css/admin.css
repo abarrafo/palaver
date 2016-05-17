@@ -1,0 +1,44 @@
+html, body {
+  height: 100%;
+}
+
+.admin-chat {
+  font-size: 80%;
+
+  width: 300px;
+  height: 100%;
+  border: 1px solid #DDD;
+  padding: 1em;
+}
+
+.admin-chat {
+  float: left;
+}
+
+.admin-chat .chat-tools {
+  position: fixed;
+  top: 0;
+  left: 331px;
+  width: 30%;
+  min-width: 350px;
+  height: 100px;
+}
+  .chat-tools textarea {
+    font-size: 14px;
+    height: 80px;
+  }
+
+.content-board {
+  margin-top: 100px;
+  margin-left: 20px;
+  float: left;
+  max-width: 500px;
+}
+
+.content-for-copying {
+  cursor: pointer;
+  background-color: #FEFEFE;
+  border: 1px solid #DDD;
+  padding: 10px;
+  margin: 5px;
+}
