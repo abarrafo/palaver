@@ -16,7 +16,7 @@ $(function() {
 
     // REGISTER DOM ELEMENTS
     var messageField = $('.chat-input');
-    var messageList = $('.chat-window');
+    var messageList = $('.admin-chat');
 
     // LISTEN FOR KEYPRESS EVENT
     messageField.keypress(function(e) {
@@ -27,28 +27,29 @@ $(function() {
             //SAVE DATA TO FIREBASE AND EMPTY FIELD
             messagesRef.push({
                 name: 'admin',
-                text: message
+                text: message,
+                timestamp: Date.now()
             });
             messageField.val('');
         }
     });
 
     // Add a callback that is triggered for each chat message.
-    messagesRef.limitToLast(10).on('child_added', function(snapshot) {
+    messagesRef.on('child_added', function(snapshot) {
         //GET DATA
         var data = snapshot.val();
         var message = data.text;
 
         //CREATE ELEMENTS MESSAGE & SANITIZE TEXT
         var messageElement = $('<span class="msg msg-fade-in">');
-        messageElement.addClass(data.name == "admin" ? 'from-me' : 'from-them');
+        messageElement.addClass(data.name == "admin" ? 'chat-me' : 'chat-them');
         messageElement.text(message);
 
         //ADD MESSAGE
         messageList.prepend(messageElement)
 
         //SCROLL TO BOTTOM OF MESSAGE LIST
-        messageList[0].scrollTop = messageList[0].scrollHeight;
+        // messageList[0].scrollTop = messageList[0].scrollHeight;
     });
 
 });
