@@ -3,7 +3,7 @@ prototype for a prototype
 
 Palaver is a boilerplate for simulating a Concierge conversation with an iOS user. Runs on firebase and modern web browsers. 
 
-![palaverscreen](https://cloud.githubusercontent.com/assets/8388/15311032/9495cb6a-1bc4-11e6-9822-70c73af24c2b.png)
+![democap](https://cloud.githubusercontent.com/assets/8388/15311107/6f0f662a-1bc5-11e6-8077-9d0bdc048ee9.gif)
 
 ## Setup
 
