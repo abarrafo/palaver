@@ -8,6 +8,35 @@ $(function() {
     var messageList = $('.chat-window');
     var sendButton = $('.chat-send').hide();
 
+    $('#device-iphone').click(function(){
+        messagesRef.remove();
+        messageList.html('');
+        $("#dashboard").toggle();
+        $('#chat').toggle();
+        messagesRef.push({
+            name: 'admin',
+            text: 'Oh Snap! You lost your iPhone?'
+        });
+    });
+
+    $('#device-ipad').click(function(){
+        messagesRef.remove();
+        messageList.html('');
+        $("#dashboard").toggle();
+        $('#chat').toggle();
+        messagesRef.push({
+            name: 'admin',
+            text: 'Oh Snap! You lost your iPad?'
+        });
+    });
+
+    $('.transfer-to-chat').click(function(evt){
+        messagesRef.remove();
+        messageList.html('');
+        $("#dashboard").toggle();
+        $('#chat').toggle();
+    });
+
     function scrollChat() {
         $('body').get(0).scrollTop = $('.chat-window').get(0).scrollHeight - 221
     }
@@ -54,6 +83,7 @@ $(function() {
     });
 
     // Add a callback that is triggered for each chat message.
+
     messagesRef.limitToLast(20).on('child_added', function(snapshot) {
         //GET DATA
         var data = snapshot.val();
@@ -69,4 +99,7 @@ $(function() {
 
         scrollChat();
     });
+
+    $('#chat').hide();
+
 })
