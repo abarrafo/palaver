@@ -30,6 +30,13 @@ $(function() {
         });
     });
 
+    $('#to-coverages').click(function(){
+        messagesRef.push({
+            name: 'admin',
+            text: 'Directing you to your coverages...'
+        });
+    });
+
     $('.transfer-to-chat').click(function(evt){
         messagesRef.remove();
         messageList.html('');
@@ -92,7 +99,7 @@ $(function() {
         //CREATE ELEMENTS MESSAGE & SANITIZE TEXT
         var messageElement = $('<span class="msg msg-fade-in">');
         messageElement.addClass(data.name == "test user" ? 'from-me' : 'from-them');
-        messageElement.text(message);
+        messageElement.html(message);
 
         //ADD MESSAGE
         messageList.prepend(messageElement)

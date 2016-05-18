@@ -3,16 +3,19 @@
 $(function() {
 
     $('.content-for-copying').on('click', function() {
+        debugger;
         $(this).css('background-color', '#FFFBCC').animate({
             backgroundColor: '#FFFFFF'
         }, 500);
 
-        $('.chat-input').val( $(this).text() ).focus();
+        $('.chat-input').val( $(this)[0].innerHTML ).focus();
     });
 
     // pulled straight from firebase demo, tweaked for our app
     // CREATE A REFERENCE TO FIREBASE
     var messagesRef = new Firebase('https://incandescent-heat-275.firebaseio.com/');
+
+    $().click(function(){});
 
     $('#clear_chat').on('click', function(){
         messagesRef.remove();
