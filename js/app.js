@@ -2,7 +2,7 @@
 
 $(function() {
 
-    var messagesRef = new Firebase('https://n0w7vrl4a8r.firebaseio-demo.com/');
+    var messagesRef = new Firebase('https://incandescent-heat-275.firebaseio.com/');
 
     var messageField = $('.chat-input');
     var messageList = $('.chat-window');

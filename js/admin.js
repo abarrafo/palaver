@@ -12,7 +12,11 @@ $(function() {
 
     // pulled straight from firebase demo, tweaked for our app
     // CREATE A REFERENCE TO FIREBASE
-    var messagesRef = new Firebase('https://n0w7vrl4a8r.firebaseio-demo.com/');
+    var messagesRef = new Firebase('https://incandescent-heat-275.firebaseio.com/');
+
+    $('#clear_chat').on('click', function(){
+        messagesRef.remove();
+    });
 
     // REGISTER DOM ELEMENTS
     var messageField = $('.chat-input');
